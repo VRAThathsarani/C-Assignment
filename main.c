@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
- int main()
+int main()
 {
     int stamp,coins,change;
-    int C50=2;
+    int C50=5;
     int C25=3;
     int C10=5;
-    int C5=0;
+    int C5=5;
 
-    int S25=2;
-    int S15=3;
-    int S10=3;
+    int S25=5;
+    int S15=5;
+    int S10=5;
 
     char A;
 
@@ -35,12 +35,21 @@
                     {
                         if (coins==50)
                         {
-                            printf("Stamp dispensed\n");
+                            printf("\n\nStamp dispensed\n");
                             printf("Change=%d\n",change);
-                            printf("Denomination= one 25 coin\n\n");
-                            C50++;
-                            C25--;
-                            S25--;
+                            if (C25>0)
+                            {
+                                 printf("Denomination = one 25 coin\n\n");
+                                 C50++;
+                                 C25--;
+                                 S25--;
+
+                            }
+                            else
+                            {
+                                printf("No Available coin");
+                            }
+
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
@@ -75,11 +84,19 @@
                         {
                             printf("\n\nStamp dispensed\n");
                             printf("Change=%d\n",change);
-                            printf("Denomination= one 25 coin and one 10 coin\n\n");
-                            C50++;
-                            C25--;
-                            C10--;
-                            S15--;
+                            if ((C25>0) && (C10>0))
+                            {
+                                 printf("Denomination = one 25 coin and one 10 coin\n\n");
+                                 C50++;
+                                 C25--;
+                                 C10--;
+                                 S15--;
+                            }
+                            else
+                            {
+                                printf("\nNo Available coin\n\n");
+                            }
+
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
@@ -87,10 +104,18 @@
                         {
                             printf("\n\nStamp dispensed\n");
                             printf("Change=%d\n",change);
-                            printf("Denomination= one 10 coin\n\n");
-                            C25++;
-                            C10--;
-                            S15--;
+                            if (C10>0)
+                            {
+                                 printf("Denomination = one 10 coin\n\n");
+                                 C25++;
+                                 C10--;
+                                 S15--;
+                            }
+                            else
+                            {
+                                printf("No Available coin");
+                            }
+
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
@@ -118,12 +143,20 @@
                         {
                             printf("\n\nStamp dispensed\n");
                             printf("Change=%d\n",change);
-                            printf("Denomination= one 25 coin , one 10 coin and one 5 coin\n\n");
-                            C50++;
-                            C25--;
-                            C10--;
-                            C5--;
-                            S10--;
+                            if ((C25>0)&&(C10>0)&&(C5>0))
+                            {
+                                 printf("Denomination = one 25 coin , one 10 coin and one 5 coin\n\n");
+                                 C50++;
+                                 C25--;
+                                 C10--;
+                                 C5--;
+                                 S10--;
+                            }
+                            else
+                            {
+                                printf("No Available coin");
+                            }
+
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
@@ -131,11 +164,19 @@
                         {
                             printf("\n\nStamp dispensed\n");
                             printf("Change=%d\n",change);
-                            printf("Denomination= one 10 coin and one 5 coin\n\n");
-                            C25++;
-                            C10--;
-                            C5--;
-                            S10--;
+                            if ((C10>0) && (C5>0))
+                            {
+                                 printf("Denomination = one 10 coin and one 5 coin\n\n");
+                                 C25++;
+                                 C10--;
+                                 C5--;
+                                 S10--;
+                            }
+                            else
+                            {
+                                printf("No Available coin");
+                            }
+
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
@@ -163,7 +204,7 @@
                 }
                 else
                 {
-                    printf("No Stamps Available");
+                    printf("No Stamps Available\n\n");
                 }
             }
             else
@@ -177,7 +218,7 @@
 
         }
 
-    printf("Wish to buy another stamp(Y/N)?\n");
+    printf("\nWish to buy another stamp(Y/N)?\n");
     scanf("%s",&A);
 
     if (A==89||A==121)
