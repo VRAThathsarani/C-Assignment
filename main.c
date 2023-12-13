@@ -160,10 +160,8 @@
             }
             else
             {
-                printf("\n\nInsufficient Amount Tendered\n\n");
+                printf("\n\nNo stamps available in the machine.Please try again later\n\n");
             }
-            printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
-            printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
         }
         else
         {
