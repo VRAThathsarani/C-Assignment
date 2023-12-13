@@ -29,9 +29,9 @@
 
                 change=coins-stamp;
 
-                if (S25>0)
+                if (S25>0 && (stamp==25))
                 {
-                    if (((coins>=50)||(coins>=25))&& (stamp==25)) 
+                    if ((coins>=50)||(coins>=25))
                     {
                         if (coins==50)
                         {
@@ -56,20 +56,20 @@
                         }
                         else
                         {
-                            printf("\n\nNo change available\n\n");
+                            printf("\n\nNot a valid coin\n\n");
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
                     }
+                    else
+                    {
+                        printf("\n\nInsufficient coin\n\n");
+                    }
                 }
-                else 
+
+                else if (S15>0 &&(stamp==15))
                 {
-                    printf("No Stamps Available");
-                }
-                
-                if (S15>0)
-                {
-                    if (((coins>=50)||(coins>=25))&&(stamp==15))
+                    if ((coins>=50)||(coins>=25))
                     {
                         if (coins==50)
                         {
@@ -96,19 +96,23 @@
                         }
                         else
                         {
-                            printf("\n\nNo change available\n\n");
+                            printf("\n\nNot a valid coin\n\n");
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
-                        }   
+                        }
+
                     }
+                    else
+                    {
+                        printf("\n\nInsufficient coin\n\n");
+                    }
+
                 }
-                else
+
+
+                else if (S10>0 &&(stamp==10))
                 {
-                    printf("No Stamps Available");
-                } 
-                if (S10>0)
-                {
-                    if (((coins>=50)||(coins>=25)||(coins>=10))&&(stamp==10))
+                    if ((coins>=50)||(coins>=25)||(coins>=10))
                     {
                         if (coins==50)
                         {
@@ -147,16 +151,20 @@
                         }
                         else
                         {
-                            printf("\n\nNo change available\n\n");
+                            printf("\n\nNot a valid coin\n\n");
                             printf("\nAvailable stamp amount: 25=%d 15=%d 10=%d\n",S25,S15,S10);
                             printf("Available coins amount: 50=%d 25=%d 10=%d 5=%d\n\n",C50,C25,C10,C5);
                         }
+                    }
+                    else
+                    {
+                        printf("\n\nInsufficient coin\n\n");
                     }
                 }
                 else
                 {
                     printf("No Stamps Available");
-                }    
+                }
             }
             else
             {
@@ -186,4 +194,3 @@
 
     return 0;
 }
-
